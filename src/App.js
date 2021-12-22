@@ -13,7 +13,11 @@ import Nav from "./components/Nav";
 function App() {
   const [open, setOpen] = useState(false);
   return (
-    <div className="App font-opensans relative overflow-hidden">
+    <div
+      className={`App font-opensans relative overflow-x-hidden ${
+        open && "max-h-screen overflow-y-hidden"
+      }`}
+    >
       <Nav open={open} setOpen={setOpen} />
       <BoxA />
       <BoxB />

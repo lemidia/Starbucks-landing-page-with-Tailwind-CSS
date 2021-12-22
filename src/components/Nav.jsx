@@ -38,32 +38,35 @@ function Nav({ open, setOpen }) {
             </button>
           </li>
           <li>
-            <button className="text-sm font-bold rounded-full px-6 py-2 text-white bg-black ">
+            <button className="text-sm font-bold rounded-full px-6 py-2 text-white bg-black">
               Join Now
             </button>
           </li>
         </ul>
 
-        <div className="lg:hidden">
-          {!open ? (
-            <span
-              className="text-4xl cursor-pointer"
-              onClick={() => {
-                setOpen(true);
-              }}
-            >
-              ☰
-            </span>
-          ) : (
-            <span
-              className="text-5xl cursor-pointer"
-              onClick={() => {
-                setOpen(false);
-              }}
-            >
-              ×
-            </span>
-          )}
+        <div
+          className="cursor-pointer relative lg:hidden h-10 w-10 rounded-full flex items-center justify-center"
+          onClick={() => {
+            setOpen(!open);
+          }}
+        >
+          <div
+            className={`absolute top-[25%] left-[50%] translate-x-[-50%] w-7 h-[2px] bg-gray-500 duration-200 ${
+              open ? "rotate-[45deg] translate-y-[9px]" : "translate-y-[-25%]"
+            }`}
+          ></div>
+          <div
+            className={`absolute top-[50%] translate-y-[-50%]  left-[50%] translate-x-[-50%] w-7 h-[2px] bg-gray-500 duration-200 ${
+              open && "hidden"
+            }`}
+          ></div>
+          <div
+            className={`absolute top-[75%] translate-y-[-75%] left-[50%] translate-x-[-50%] w-7 h-[2px] bg-gray-500 duration-200 ${
+              open
+                ? "rotate-[-45deg] translate-y-[-11px]"
+                : "translate-y-[-75%]"
+            }`}
+          ></div>
         </div>
       </div>
     </div>

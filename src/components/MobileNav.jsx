@@ -4,8 +4,8 @@ function MobileNav({ open }) {
   return (
     // Mobile Nav
     <div
-      className={`h-screen w-[80%] absolute bg-white px-8 py-20 space-y-10 top-[80px] transition-all duration-300 right-0 lg:hidden ${
-        open ? " translate-x-0 ease-out" : "translate-x-[999px] ease-in"
+      className={`h-screen w-[80%] absolute bg-white px-8 py-20 space-y-10 top-[80px] duration-500 right-0 lg:hidden ease-in-out ${
+        open ? " translate-x-0" : "translate-x-[999px]"
       }`}
     >
       <ul className="text-xl font-medium space-y-8 border-b-2 pb-10">
